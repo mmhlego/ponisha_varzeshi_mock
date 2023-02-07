@@ -4,6 +4,8 @@ import App from "./pages/App";
 import "./styles/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "pages/Error";
+import Video from "pages/Video";
+import Coach from "pages/Coach";
 
 //Create routes
 const router = createBrowserRouter([
@@ -11,6 +13,16 @@ const router = createBrowserRouter([
 		path: "/",
 		element: <App />,
 		errorElement: <Error />,
+		children: [
+			{
+				path: "videos",
+				element: <Video />,
+			},
+			{
+				path: "coaches",
+				element: <Coach />,
+			},
+		],
 	},
 ]);
 
