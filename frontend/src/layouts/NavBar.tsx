@@ -1,11 +1,9 @@
 import { Logo } from "assets/images/logo";
 import NavItem from "components/NavItem";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-type Props = {};
-
-export default function NavBar({}: Props) {
+export default function NavBar() {
 	//Create this array to set items of nav bar
 	type navItem = {
 		title: string;

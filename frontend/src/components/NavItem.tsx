@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Pathname } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type Props = {
 	title: string;
