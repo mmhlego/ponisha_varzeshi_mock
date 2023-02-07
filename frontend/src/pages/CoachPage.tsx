@@ -1,17 +1,14 @@
-import AccordianItem from "components/AccordianItem";
+import AccordionItem from "components/AccordionItem";
 import { getCoaches } from "data/axios";
-import { useQuery } from "react-query";
-import React from "react";
 import Coach from "model/Coach";
+import { useQuery } from "react-query";
 
-type Props = {};
-
-export default function CoachPage({}: Props) {
+export default function CoachPage() {
 	const {
 		isLoading,
 		isError,
 		data: coaches,
-	} = useQuery("coches", getCoaches);
+	} = useQuery("coaches", getCoaches);
 
 	return (
 		<div className="coach-container">
@@ -22,7 +19,7 @@ export default function CoachPage({}: Props) {
 			) : (
 				coaches?.map((coach: Coach) => {
 					return (
-						<AccordianItem
+						<AccordionItem
 							key={coach.id}
 							firstName={coach.firstName}
 							lastName={coach.lastName}
