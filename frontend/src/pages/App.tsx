@@ -1,8 +1,6 @@
-import VideoItem from "components/VideoItem";
 import NavBar from "layouts/NavBar";
-import "./../styles/App.scss";
 import { Outlet } from "react-router-dom";
-import AccordianItem from "components/AccordianItem";
+import "./../styles/App.scss";
 
 export default function App() {
 	return (

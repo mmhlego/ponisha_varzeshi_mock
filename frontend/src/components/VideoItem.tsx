@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import VideoPlayer from "./VideoPlayer";
 
 type Props = {
 	title: string;
-	descroption: string;
+	description: string;
 	videoUrl: string;
 	thumbnailUrl: string;
 };
 
 export default function VideoItem({
 	title,
-	descroption,
+	description,
 	videoUrl,
 	thumbnailUrl,
 }: Props) {
@@ -30,7 +30,7 @@ export default function VideoItem({
 					<img alt={title} src={thumbnailUrl} />
 					<div className="video-des">
 						<p className="title">{title}</p>
-						<p className="additional">{descroption}</p>
+						<p className="additional">{description}</p>
 					</div>
 				</>
 			)}
