@@ -19,7 +19,7 @@ export default function AccordianItem({
 	//Create this state to open and close accordian
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 
-	const coachBirthDate = new Date(birthDate);
+	const coachBirthDate = new Date(birthDate).toDateString();
 
 	const handelClick = (e: any): void => {
 		e.preventDefault();
