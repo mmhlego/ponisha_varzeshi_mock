@@ -1,6 +1,6 @@
 import { Logo } from "assets/images/logo";
 import NavItem from "components/NavItem";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function NavBar() {
@@ -21,9 +21,13 @@ export default function NavBar() {
 		},
 	];
 
-	//Show the selected page
+	// Show the selected page
 	const location = useLocation();
 	const [pathName, setPathName] = useState<string>(location.pathname);
+
+	useEffect(() => {
+		setPathName(location.pathname);
+	}, [location.pathname]);
 
 	const handelClick = (path: string): void => {
 		setPathName(path);

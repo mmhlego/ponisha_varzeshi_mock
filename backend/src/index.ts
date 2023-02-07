@@ -11,7 +11,7 @@ const port = 3001;
 app.use(cors());
 
 app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+	console.log(`Server in now running on port ${port}`);
 });
 
 app.get("/videos", (req, res) => {

@@ -1,16 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./pages/App";
-import "./styles/index.scss";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CoachPage from "pages/CoachPage";
 import Error from "pages/Error";
 import VideoPage from "pages/VideoPage";
-import CoachPage from "pages/CoachPage";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
+import {
+	createBrowserRouter,
+	Navigate,
+	RouterProvider,
+} from "react-router-dom";
+import App from "./pages/App";
+import "./styles/index.scss";
 
 const queryClient = new QueryClient();
 
-//Create routes
+// Create routes
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -18,12 +22,16 @@ const router = createBrowserRouter([
 		errorElement: <Error />,
 		children: [
 			{
-				path: "videos",
+				path: "/videos",
 				element: <VideoPage />,
 			},
 			{
-				path: "coaches",
+				path: "/coaches",
 				element: <CoachPage />,
+			},
+			{
+				path: "/",
+				element: <Navigate to="/videos" />,
 			},
 		],
 	},

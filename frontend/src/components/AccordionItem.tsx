@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 type Props = {
 	firstName: string;
@@ -8,14 +8,14 @@ type Props = {
 	phoneNumber: string;
 };
 
-export default function AccordianItem({
+export default function AccordionItem({
 	firstName,
 	lastName,
 	level,
 	birthDate,
 	phoneNumber,
 }: Props) {
-	//Create this state to open and close accordian
+	// Create this state to open and close accordion
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 
 	const coachBirthDate = new Date(birthDate).toDateString();
@@ -23,7 +23,6 @@ export default function AccordianItem({
 	const handelClick = (e: any): void => {
 		e.preventDefault();
 		isOpen ? setIsOpen(false) : setIsOpen(true);
-		console.log(isOpen);
 	};
 
 	return (
