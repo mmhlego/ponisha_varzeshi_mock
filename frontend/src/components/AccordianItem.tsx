@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 type Props = {
-	id: number;
 	firstName: string;
 	lastName: string;
 	level: number;
 	birthDate: string;
-	phoneNumber: number;
+	phoneNumber: string;
 };
 
 export default function AccordianItem({
@@ -39,14 +38,14 @@ export default function AccordianItem({
 						? "#CD7F32"
 						: "#7ACFFF",
 			}}
-			className={`accordian ${isOpen ? "open" : ""}`}
+			className="accordian"
 			onClick={(e) => handelClick(e)}
 		>
 			<div className="title">
 				<p>{`نام و نام خانوادگی: ${firstName} ${lastName}`}</p>
 				<p>{`کاربر سطح ${level}`}</p>
 			</div>
-			<div className="additional">
+			<div className={`additional ${isOpen ? "open" : ""}`}>
 				<p>{`تلفن تماس: ${phoneNumber}`}</p>
 				<p>{`تاریخ تولد: ${coachBirthDate}`}</p>
 			</div>

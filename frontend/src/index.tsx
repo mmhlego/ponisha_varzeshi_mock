@@ -4,8 +4,11 @@ import App from "./pages/App";
 import "./styles/index.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "pages/Error";
-import Video from "pages/Video";
-import Coach from "pages/Coach";
+import VideoPage from "pages/VideoPage";
+import CoachPage from "pages/CoachPage";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 //Create routes
 const router = createBrowserRouter([
@@ -16,11 +19,11 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "videos",
-				element: <Video />,
+				element: <VideoPage />,
 			},
 			{
 				path: "coaches",
-				element: <Coach />,
+				element: <CoachPage />,
 			},
 		],
 	},
@@ -31,6 +34,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<React.StrictMode>
-		<RouterProvider router={router} />
+		<QueryClientProvider client={queryClient}>
+			<RouterProvider router={router} />
+		</QueryClientProvider>
 	</React.StrictMode>
 );
