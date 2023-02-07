@@ -1,42 +1,44 @@
 .accordian {
 	width: 80%;
-	height: 70px;
 	overflow: hidden;
 	border-radius: 15px;
 	direction: rtl;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
 
 	p {
-		font-size: 20px;
+		font-size: 1.1rem;
 		font-weight: 600;
 	}
 
 	.title {
 		width: 100%;
-		height: 70px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0 30px;
+		padding: 20px 30px;
 	}
 
 	.additional {
 		width: 100%;
-		height: 80px;
+		height: 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		opacity: 0;
+		padding: 0;
 		background-color: #ffffff;
 		border-radius: 0 0 15px 15px;
-		padding: 0 30px;
+		transition: all 0.3s ease;
 	}
-}
 
-.accordian.open {
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	transition: height 0.3s linear;
+	.additional.open {
+		height: auto;
+		padding: 20px 30px;
+		opacity: 1;
+	}
 }
 
 .coach-container {
@@ -45,4 +47,17 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 15px;
+	padding: 40px 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.accordian {
+		.title,
+		.additional {
+			gap: 15px;
+			flex-wrap: wrap;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
 }

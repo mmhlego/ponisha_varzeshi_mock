@@ -3,7 +3,6 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
 }
 
 .nav-bar {
@@ -40,7 +39,7 @@
 
 		&::after {
 			content: "";
-			width: 5px;
+			width: 0px;
 			height: 2px;
 			margin-top: 2px;
 			display: block;
@@ -57,6 +56,14 @@
 		&::after {
 			width: 100%;
 		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.nav-bar {
+		flex-direction: column;
+		padding: 15px 0;
+		gap: 15px;
 	}
 }
 
