@@ -52,6 +52,12 @@
 			transition: width 0.3s linear;
 		}
 	}
+
+	.nav-item.selected {
+		&::after {
+			width: 100%;
+		}
+	}
 }
 
 @import "./video";
